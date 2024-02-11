@@ -1,4 +1,12 @@
+
+import Layout from '../components/Layout';
+import JobList from '../components/JobList';
+
 const Home = ()  => {
-  return <h1>Hello World</h1>
+  return (
+    <Layout>
+      <JobList />
+    </Layout>
+  )
 }
 export default Home;
