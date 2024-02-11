@@ -13,7 +13,13 @@ const API = ( { formState}) => {
                 if (formState.location) {
                     params.location = formState.location;
                 }
-                const response = await axios.get('https://jobs.github.com/positions.json', { params}); 
+                const response = await axios.get('https://jobs.github.com/positions.json', { 
+                    params,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${process.env.KEY_ACCESS}`
+                    },
+                }); 
                     console.log(response.data);
                   } catch (error) {
                     console.error(error);
@@ -22,7 +28,7 @@ const API = ( { formState}) => {
                 fetchResponse();
     }, [formState]);
 
-            return <h1>API</h1>
+            return;
         };
 
 export default API;

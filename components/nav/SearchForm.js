@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import API from '../../app/API/api';
+import JobList from '../JobList';
 
 const SearchForm = () => {
     const [formState, setFormState] = useState({
@@ -61,6 +62,7 @@ const SearchForm = () => {
         <button className='text-center rounded-xl px-4 bg-black text-white' type="submit">Find Job</button>
         </form>
         <API formState={formState}/>
+        <JobList />
         </div>
     );
 }
