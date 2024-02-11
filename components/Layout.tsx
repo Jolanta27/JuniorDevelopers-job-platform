@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import SearchForm from './nav/SearchForm';
 
 const Layout = ({ children }) => {
     return (
-        <div>
+        <>
             <nav className="flex justify-between p-8">
             <div>{/*I will insert logo here later*/}
             </div>
@@ -26,17 +27,18 @@ const Layout = ({ children }) => {
                 </ul>
                 </div>
             </nav>
-            <div>
+            <div className='flex flex-col justify-center items-center'>
                 <h1>Launch Your Career in Tech</h1>
                 <p>Empowering Junior Developers</p>
                 <p>Your Gateaway to Exciting Tech Opportunities</p>
             </div>
+            <SearchForm />
             <main>
                 {children}
             </main>
             <footer>
             </footer>
-        </div>
+        </>
     )
 }
 export default Layout;
