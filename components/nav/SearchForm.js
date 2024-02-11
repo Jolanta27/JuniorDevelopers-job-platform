@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import API from '../../app/API/api';
 
 const SearchForm = () => {
     const [formState, setFormState] = useState({
@@ -9,12 +10,13 @@ const SearchForm = () => {
         technology: ''
     });
     const handleChange = (e) => {
+        const value = Array.from(e.target.selectedOptions, option => option.value);
         setFormState({
             ...formState,
-            [e.target.name]: e.target.value,
+            [e.target.name]: value,
         });
     };
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(formState);
     };
@@ -26,6 +28,7 @@ const SearchForm = () => {
     const technologies = ['HTML', 'CSS3', 'JavaScript', 'React', 'Node.js', 'Express', 'MongoDB', 'Python', 'Django', 'Flask', 'PostgreSQL', 'Ruby', 'Rails', 'Java', 'Spring', 'MySQL', 'C#', 'C++', 'C', 'Swift', 'Kotlin', 'Go', 'Rust', 'TypeScript', 'Vue.js', 'Angular', 'Svelte', 'PHP', 'Laravel', 'Symfony', 'WordPress', 'Drupal', 'Joomla', 'Magento', 'Shopify', 'WooCommerce', 'Wix', 'Webflow', 'GraphQL', 'REST', 'API', 'OAuth', 'Docker', 'Kubernetes', 'Jenkins', 'Kubernetes'];
 
     return (
+        <div>
         <form onSubmit={handleSubmit} className='flex justify-center space-x-7'>
         <select 
         name="location"
@@ -33,9 +36,9 @@ const SearchForm = () => {
         onChange={handleChange}
         className='w-1/5 py-2 rounded-xl text-center'>
         <option value="">Location</option>
-        {locations.map((location) => {
-            return <option key={location} value={location}>{location}</option>
-        })}
+        {locations.map((location, index) => (
+             <option key={`location-${index}`} value={location}>{location}</option>
+        ))}
         </select>
         <select 
         name="position"
@@ -43,8 +46,8 @@ const SearchForm = () => {
         onChange={handleChange}
         className='w-1/5 py-2 rounded-xl text-center'>
         <option value="">Position</option>
-        {positiones.map((position) => (
-            <option key={position} value={position}>{position}</option>
+        {positiones.map((position, index) => (
+            <option key={`position-${index}`} value={position}>{position}</option>
         ))}
         </select>
         <select
@@ -52,11 +55,13 @@ const SearchForm = () => {
         value={formState.technology}
         onChange={handleChange} className='w-1/5 py-2 rounded-xl text-center'>
         <option value="">Technology</option>
-        {technologies.map((tech) => (
-            <option key={tech} value={tech}>{tech}</option> 
+        {technologies.map((tech, index) => (
+            <option key={`tech-${index}`} value={tech}>{tech}</option> 
         ))}</select>
         <button className='text-center rounded-xl px-4 bg-black text-white' type="submit">Find Job</button>
         </form>
+        <API formState={formState}/>
+        </div>
     );
 }
 export default SearchForm;
