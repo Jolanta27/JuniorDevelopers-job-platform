@@ -27,10 +27,10 @@ const Layout = ({ children }) => {
                 </ul>
                 </div>
             </nav>
-            <div className='flex flex-col justify-center items-center'>
-                <h1>Launch Your Career in Tech</h1>
-                <p>Empowering Junior Developers</p>
-                <p>Your Gateaway to Exciting Tech Opportunities</p>
+            <div className='flex flex-col justify-center items-center py-10'>
+                <h1 className='text-4xl'>Launch Your Career in Tech</h1>
+                <p className='text-2xl'>Empowering Junior Developers</p>
+                <p className='text-xl'>Your Gateaway To Exciting Tech Opportunities</p>
             </div>
             <SearchForm />
             <main>
