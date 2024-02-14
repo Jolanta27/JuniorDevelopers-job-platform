@@ -11,6 +11,7 @@ export const locations = [
     'Sopot',
 ];
 
+
 export const positions = [
     'Backend',
     'Frontend',
