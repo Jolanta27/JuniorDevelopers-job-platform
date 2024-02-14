@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/nav/SearchForm.jsx", app/components/Layout.tsxx", app/API/api.tsxx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/nav/SearchForm.jsx", "app/components/Layout.tsx", "app/API/api.tsx"],
   "exclude": ["node_modules"]
 }

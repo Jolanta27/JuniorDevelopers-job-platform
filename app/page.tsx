@@ -1,7 +1,5 @@
 import Layout from './components/Layout';
-import JobList from './components/JobList';
 import Link from 'next/link';
-import SearchForm from './components/nav/SearchForm';
 
 const Home = () => {
   return (
@@ -27,7 +25,6 @@ const Home = () => {
         <p className="text-2xl">Empowering Junior Developers</p>
         <p className="text-xl">Your Gateaway To Exciting Tech Opportunities</p>
       </div>
-      <SearchForm />
     </Layout>
   );
 };

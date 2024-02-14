@@ -1,6 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: [ './pages/**/*.{js,jsx,ts,tsx}', './components/**/*.{js,jsx,ts,tsx}'],
+  content: [ './pages/**/*.{js,jsx,ts,tsx}',
+  './components/**/*.{js,jsx,ts,tsx}',
+  './app/**/*.{js,jsx,ts,tsx}',
+  './Employer/**/*.{js,jsx,ts,tsx}',
+  './lib/**/*.{js,jsx,ts,tsx}',
+  './Registration/**/*.{js,jsx,ts,tsx}',
+  './layout.tsx',
+  './page.tsx',
+  './utils.ts'
+
+],
   theme: {
     extend: {},
   },

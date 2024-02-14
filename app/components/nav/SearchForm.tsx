@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import API, { getResponseData } from '../../lib/getLocationData';
+import { getResponseData } from '../../lib/getLocationData';
 import JobList from '../JobList';
 import { locations, positions, technologies } from '../../utils';
 
