@@ -8,7 +8,6 @@ import { IoPerson } from "react-icons/io5";
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-
 interface IFormInput {
   firstName: string;
   lastName: string;
@@ -52,16 +51,8 @@ const Registration = () => {
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     console.log(data);
-      reset({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-        acceptTerms: false
-      });
-  };
-
+  }
+  
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
     <form  
@@ -87,7 +78,7 @@ const Registration = () => {
       <input 
       className="outline-none border border-gray-300 rounded-xl p-2 ml-7"
       placeholder="First Name" {...register("firstName", { required: true, maxLength: 25})} />
-      {errors.firstName && <p className='text-red-500 ml-8 mt-2'>{errors.firstName.message}</p>}
+      { errors.firstName && <p className='text-red-500 ml-8 mt-2'>{errors.firstName.message}</p>}
       </div>
       </div>
       <div className="flex">
@@ -150,7 +141,6 @@ const Registration = () => {
       className='rounded-xl p-3 bg-black text-white w-32 my-4' type="submit" >Register</button>
     </form>
     </div>
-  )
+  );
 };
-
 export default Registration;
