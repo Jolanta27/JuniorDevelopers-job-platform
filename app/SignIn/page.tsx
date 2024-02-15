@@ -40,7 +40,7 @@ const Signin = () => {
           type="email"
           placeholder='Email Address'
           value={email}
-          className='outline-none ml-2'
+          className="outline-none border border-gray-300 rounded-xl p-2 ml-2"
           onChange={(e) => setEmail(e.target.value)}
           required
         />
@@ -51,7 +51,7 @@ const Signin = () => {
           type="password"
           placeholder='Password'
           value={password}
-          className='outline-none ml-2'
+          className="outline-none border border-gray-300 rounded-xl p-2 ml-2"
           onChange={(e) => setPassword(e.target.value)}
           required
         />
