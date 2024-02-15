@@ -1,5 +1,5 @@
 "use client";
-
+import { signIn } from "next-auth/react";
 import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { FaRegEnvelope, FaFacebookF, FaGithub, FaGoogle } from 'react-icons/fa';
@@ -7,6 +7,7 @@ import { MdLockOutline } from 'react-icons/md';
 import { IoPerson } from "react-icons/io5";
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+
 
 interface IFormInput {
   firstName: string;
@@ -61,13 +62,13 @@ const Registration = () => {
       <h1 className='text-3xl font-bold mb-2'>
         Create Account</h1>
        <div className='flex justify-center mx-2'>
-      <a href="#" className='border-2 rounded-full m-2 p-1'>
+      <a onClick={() => signIn('Facebook')} className='border-2 rounded-full m-2 p-1'>
       <FaFacebookF className='m-2 ' />
       </a>
-      <a href="#" className='border-2 rounded-full m-2 p-1'>
+      <a onClick={() => signIn('Github')} className='border-2 rounded-full m-2 p-1'>
       <FaGithub className='m-2'/>
       </a>
-      <a href="#" className='border-2 rounded-full m-2 p-1'>
+      <a onClick={() => signIn('Google')} className='border-2 rounded-full m-2 p-1'>
       <FaGoogle className='m-2'/>
       </a>
       </div>

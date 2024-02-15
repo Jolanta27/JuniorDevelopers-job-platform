@@ -1,5 +1,5 @@
 "use client";
-
+import { signIn } from "next-auth/react";
 import React from 'react';
 import { useState } from 'react';
 import { FaFacebookF, FaGithub, FaGoogle, FaRegEnvelope } from 'react-icons/fa';
@@ -23,13 +23,13 @@ const Signin = () => {
       </h1>
       <div className='border-2 w-10 mb-2'></div>
       <div className='flex justify-center mx-2'>
-      <a href="#" className='border-2 rounded-full m-2 p-1'>
+      <a onClick={() => signIn('Facebook')} className='border-2 rounded-full m-2 p-1'>
       <FaFacebookF className='m-2 ' />
       </a>
-      <a href="#" className='border-2 rounded-full m-2 p-1'>
+      <a onClick={() => signIn('Github')} className='border-2 rounded-full m-2 p-1'>
       <FaGithub className='m-2'/>
       </a>
-      <a href="#" className='border-2 rounded-full m-2 p-1'>
+      <a onClick={() => signIn('Google')}className='border-2 rounded-full m-2 p-1'>
       <FaGoogle className='m-2'/>
       </a>
       </div>
