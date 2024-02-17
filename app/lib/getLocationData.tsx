@@ -22,7 +22,7 @@ export const getResponseData = async (formState: FormState) => {
 
 
 import axios from 'axios';
-import { FormState } from '../components/nav/SearchForm';
+import { FormState } from '../components/SearchForm';
 
 export const getResponseData = async (formState: FormState) => {
   try {

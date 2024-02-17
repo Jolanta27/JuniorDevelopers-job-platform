@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { getResponseData } from '../../lib/getLocationData';
-import JobList from '../JobList';
-import { locations, positions, technologies } from '../../utils';
+import { getResponseData } from '../lib/getLocationData';
+import JobList from './JobList';
+import { locations, positions, technologies } from '../utils';
 
 export type FormState = {
   location: string;
@@ -37,6 +37,11 @@ const SearchForm = () => {
 
   return (
     <div>
+        <div className="flex flex-col justify-center items-center py-10 mt-10  gap-2">
+        <h1 className="text-4xl font-bold">Launch Your Career in Tech</h1>
+        <p className="text-2xl">Empowering Junior Developers</p>
+        <p className="text-xl">Your Gateaway To Exciting Tech Opportunities</p>
+    </div>
       <form onSubmit={handleSubmit} className="flex justify-center space-x-7">
         <select
           name="location"
@@ -85,7 +90,6 @@ const SearchForm = () => {
         </button>
       </form>
       {/* TODO PASS JOBS FETCHED DOWN IN THE COMPONENT  FOR NOW PASSING IN EMPTY ARRAY*/}
-      <JobList jobs={[]} />
     </div>
   );
 };

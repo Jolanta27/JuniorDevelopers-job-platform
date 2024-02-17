@@ -27,6 +27,7 @@ const Employer = () => {
     </Paragraph>
     <Paragraph>Whether you are a startup, a growing company, or an established organization, our platform is your gateaway to discovering and hiring the best junior developers for your team.
     </Paragraph>
+    <button className='text-white bg-black p-8 rounded-2xl'>Post a Job</button>
   </div>
   );
 };

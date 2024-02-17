@@ -68,7 +68,7 @@ const Registration = () => {
       <a onClick={() => signIn('Github')} className='border-2 rounded-full m-2 p-1'>
       <FaGithub className='m-2'/>
       </a>
-      <a onClick={() => signIn('Google')} className='border-2 rounded-full m-2 p-1'>
+      <a onClick={() => signIn('Google')}className='border-2 rounded-full m-2 p-1'>
       <FaGoogle className='m-2'/>
       </a>
       </div>
