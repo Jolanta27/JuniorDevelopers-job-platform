@@ -12,10 +12,11 @@ module.exports = {
 
 ],
   theme: {
-    extend: {},
-  },
-  theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'bg-color': '#f4eef4',
+      },
+    },
   },
   variants: {
     extend: {},

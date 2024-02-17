@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../components/ui/Button';
 
 interface HeaderProps {
   title: string;
@@ -17,7 +18,7 @@ const Paragraph: React.FC<ParagraphProps> = ({ children }) => <p className='text
 
 const Employer = () => {
   return (
-  <div className='text-center w-3/4 m-auto pt-10 space-y-4'>
+  <div className='text-center w-3/4 m-auto pt-10 space-y-4 mt-20'>
     <Header title="Discover Your Next Junior Development Talent" />
     <SubHeader subtitle="Welcome to our platform - the premier destination for finding talented and motivated junior developers." />
     <Paragraph>
@@ -27,7 +28,7 @@ const Employer = () => {
     </Paragraph>
     <Paragraph>Whether you are a startup, a growing company, or an established organization, our platform is your gateaway to discovering and hiring the best junior developers for your team.
     </Paragraph>
-    <button className='text-white bg-black p-8 rounded-2xl'>Post a Job</button>
+    <Button />
   </div>
   );
 };

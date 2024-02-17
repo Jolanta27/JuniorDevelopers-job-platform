@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import { getResponseData } from '../lib/getLocationData';
-import JobList from './JobList';
 import { locations, positions, technologies } from '../utils';
 
 export type FormState = {
@@ -83,7 +82,7 @@ const SearchForm = () => {
           ))}
         </select>
         <button
-          className="text-center rounded-xl px-4 bg-black text-white"
+          className="text-center rounded-xl px-4 bg-black text-white hover:bg-black/65 transition duration-300 ease-in-out"
           type="submit"
         >
           Find Job

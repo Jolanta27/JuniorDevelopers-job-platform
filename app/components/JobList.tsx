@@ -1,4 +1,5 @@
 import React from 'react';
+import Input from './ui/Input';
 
 type JobListProps = {
   //TO do type this better
@@ -15,6 +16,7 @@ const JobList = ({ jobs }: JobListProps) => {
           <p>{job.company}</p>
         </div>
       ))}
+      <Input />
     </div>
   );
 };

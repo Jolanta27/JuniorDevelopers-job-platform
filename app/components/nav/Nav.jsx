@@ -9,14 +9,14 @@
         <div>{/*I will insert logo here later*/}</div>
         <div>
         <ul className="flex space-x-4">
-            <li className='bg-black rounded-xl text-white p-3'>
+            <li className='bg-black rounded-xl text-white p-3 hover:bg-black/65 transition'>
             <Link href="/Employer">Employer
             </Link>
             </li>
-            <li className='bg-black rounded-xl text-white py-3 px-5'>
+            <li className='bg-black rounded-xl text-white py-3 px-5 hover:bg-black/65 transition'>
             <Link href="/SignIn">Sign In</Link>
             </li>
-            <li className='bg-black rounded-xl text-white p-3'>
+            <li className='bg-black rounded-xl text-white p-3 hover:bg-black/65 transition'>
             <Link href="/Registration">Registration</Link>
             </li>
         </ul>
