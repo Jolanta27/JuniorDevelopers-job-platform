@@ -2,8 +2,6 @@
 import Nav from './components/nav/Nav';
 import Layout from './components/Layout';
 
-
-
 const Home = () => {
 
   return (

@@ -1,40 +1,20 @@
 import React, { ReactNode } from 'react';
+import Nav from '../components/nav/Nav';
 import SearchForm from './SearchForm';
-import JobList from './JobList';
-import JobCard from './ui/JobCard';
+import JobCards from '../components/JobCards';
 
 interface LayoutProps {
   children: ReactNode;
 }
-interface JobListProps {
-  jobs: Job[];
-}
+
 
 const Layout = ({ children }: LayoutProps) => {
-  const jobs = [
-    {
-      title: 'Junior Developer',
-      location: 'New York',
-      company: 'Google',
-    },
-    {
-      title: 'Junior Developer',
-      location: 'New York',
-      company: 'Google',
-    },
-    {
-      title: 'Junior Developer',
-      location: 'New York',
-      company: 'Google',
-    },
-  ];
+  
   
   return (
     <>
-      <main>{children}</main>
-      <SearchForm />
-      <JobList jobs={jobs}/>
-      <JobCard />
+        <Nav />
+        <JobCards />
       <footer></footer>
     </>
   );

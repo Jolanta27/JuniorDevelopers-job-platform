@@ -1,9 +1,11 @@
     import React from 'react';
     import Link from 'next/link';
+    import SearchForm from '../SearchForm';
 
 
     const Nav = () => {
     return (
+        <div>
         <div className='bg-white'>
         <nav className="flex justify-between p-8">
         <div>{/*I will insert logo here later*/}</div>
@@ -22,6 +24,8 @@
         </ul>
         </div>
     </nav>
+    </div>
+    <SearchForm />
     </div>
     );
     }

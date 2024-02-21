@@ -8,11 +8,10 @@ datasource db {
 }
 model JobPosting {
   id String @id @default(uuid())
-  name String
-  description String
-  Salary Float @default(0)
+  title String
   location String
-  company String
-  employmentType String
-  createdAt DateTime @default(now())
+  companyName String
+  salary Int
+  employmentType String?
+  description String
 }
