@@ -1,26 +1,3 @@
-/*import axios from 'axios';
-import { FormState } from '../components/nav/SearchForm';
-
-export const getResponseData = async (formState: FormState) => {
-  try {
-    const params = {
-      description: formState?.position,
-      location: formState?.location,
-    };
-    
-    return await axios.get('api/jobs', { params })
-    .then(response => response.data)
-    .catch(error => {
-      console.log(error);
-      return null;
-    });
-  } catch (error) {
-      console.log(error);
-      return null;
-    };
-  }*/
-
-
 import axios from 'axios';
 import { FormState } from '../components/SearchForm';
 

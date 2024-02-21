@@ -10,7 +10,7 @@ model JobPosting {
   id String @id @default(uuid())
   title String
   location String
-  companyName String
+  author String
   salary Int
   employmentType String?
   description String
