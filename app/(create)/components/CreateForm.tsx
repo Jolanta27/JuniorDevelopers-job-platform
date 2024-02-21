@@ -2,8 +2,7 @@
 
 import {useForm} from "react-hook-form";
 import {createJob, type FormData } from "@/app/(create)/actions/createJobActions"; 
-import Button from "@/components/ui/Button";
-import Input from "@/components/ui/Input";
+import Button from "../../components/ui/Button";
 import {useState, useEffect} from "react";
 import { useEdgeStore } from "@/lib/edgestore";
 
