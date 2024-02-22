@@ -50,9 +50,25 @@ const Registration = () => {
     }
   });
 
-  const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    console.log(data);
-  }
+  const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+    try {
+      const response = await fetch('http://localhost:3001/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const responseData = await response.json();
+      console.log(responseData);
+      reset();
+    } catch (error) {
+      console.error('Error', error);
+    }
+  };
   
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
