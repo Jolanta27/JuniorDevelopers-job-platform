@@ -1,7 +1,6 @@
 "use client"
 
 import { useForm } from "react-hook-form";
-import { createJob } from "../app/(create)/actions/createJobActions";
 
 const CreateJobForm = () => {
     const container = {
@@ -98,15 +97,12 @@ const CreateJobForm = () => {
             description: "",
         },
     });
-    const handleData = async (data: IFormInput) => {
-        await createJob(data);
-        reset();
-    };
-
+    const onSubmit = (data: IFormInput) => {
+        console.log(data);
+    }
     return (
         <div style={container}>
-        <form style={formStyle} 
-        onSubmit={handleSubmit(handleData)}>
+        <form style={formStyle} onSubmit={handleSubmit(onSubmit)}>
         <h1 style={styles}>
             Post a Job
         </h1>

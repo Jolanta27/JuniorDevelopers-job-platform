@@ -1,11 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { getResponseData } from '../lib/getLocationData';
+import { useState } from 'react';
 import { locations, positions, technologies } from '../utils';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
-import JobCards from './JobCards';
+import JobsPage from '../../pages/jobs';
 
 export type FormState = {
   location: string;
@@ -24,7 +23,8 @@ const customStyles = {
 const SearchForm = () => {
     const [showJobs, setShowJobs] = useState(false);
 
-    const handleClick = () => {
+    const handleClick = (event) => {
+      event?.preventDefault();
       setShowJobs(!showJobs);
     }
     const options = technologies.map((tech) => ({
@@ -79,9 +79,7 @@ const SearchForm = () => {
           Find Job
         </button>
       </form>
-      {showJobs ? (
-        <JobCards />
-      ) : (
+      {showJobs ? ( <JobsPage />) : (
         <div className='flex flex-col items-center mt-12 gap-5'>
         <h1 className='text-5xl'>Take the first step step towards your dream job </h1>
         <h2 className='text-2xl'>Click on button to explore available opportunities and kickstart your IT journey today!</h2>
