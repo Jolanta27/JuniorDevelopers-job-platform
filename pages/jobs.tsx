@@ -36,7 +36,7 @@ const JobsPage = () => {
     }, []);
 
     return (
-        <div className="flex flex-col space-y-4 space-x-4 mt-12">
+        <div className="flex flex-col space-y-4 space-x-4 mt-12 max-h-[450px] overflow-auto">
             <h1 className="text-center text-3xl font-bold">Jobs</h1>
             <table>
                 <thead>
@@ -63,7 +63,7 @@ const JobsPage = () => {
                 </tbody>
             </table>
             <div className="flex justify-center mt-10">
-            <button className="rounded-xl px-4 bg-black text-white hover:bg-black/65 transition duration-300 ease-in-out w-1/7 p-3"
+            <button className="rounded-xl bg-black text-white hover:bg-black/65 transition duration-300 ease-in-out w-1/7 p-4 mb-3"
             onClick={handleShowMore}
             >Show More</button>
             </div>

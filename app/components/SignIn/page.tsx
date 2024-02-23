@@ -1,16 +1,55 @@
 "use client";
+
 import { signIn } from "next-auth/react";
 import React from 'react';
 import { useState } from 'react';
 import { FaFacebookF, FaGithub, FaGoogle, FaRegEnvelope } from 'react-icons/fa';
 import { MdLockOutline } from 'react-icons/md';
+import { useRouter } from 'next/navigation';
 
 const Signin = () => {
+  const router = useRouter();
   const [email, setEmail ] = useState('');
   const [password, setPassword] = useState('');
-
+  const [userName, setUserName] = useState('');
+ 
   const handleSubmit = async (event ) => {
     event.preventDefault();
+
+    let response;
+    try { 
+      response = await fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password
+      })
+    });
+  } catch (error) {
+    console.error('Error making fetch request', error);
+    return;
+  }
+   let data: any;
+   try { await response.json();
+    console.log(data);
+   } catch (error) {
+    console.error('Error parsing JSON', error);
+   }
+    if(response.ok) {
+      setUserName(data.firstName);
+      router.push({
+        pathname: '/SignedUserPage',
+        query: { name: String(firstName) }
+      });
+    } else {
+      const errorMessageElement = document.getElementById('login-error');
+      if (errorMessageElement && data) {
+        errorMessageElement.textContent = data.message;
+      }
+    }
   };
 
   return (
@@ -60,7 +99,7 @@ const Signin = () => {
           <input type="checkbox" value="Remember me" />Remember me
           <a href="#" className='text-blue-500 ml-5'>Forgot your password?</a>
         </label>
-   
+      <p id="login-error"></p>
       <button type="submit" className='rounded-xl p-3 bg-black text-white w-32 mt-4'>Sign in</button>
     </form>
     </div>
