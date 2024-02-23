@@ -1,12 +1,14 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 
-interface SignedUserPageProps {
-  firstName: string;
-}
-const SignedUserPage: React.FC<SignedUserPageProps> = ({ firstName }) => {
+
+const SignedUserPage: React.FC = () => {
+  const router = useRouter();
+  const { name } = (router.query as any);
+
   return (
     <div>
-       <h1>Hello {firstName}</h1>
+       <h1>Hello {name || 'User'}!</h1>
     </div>
   )
 }

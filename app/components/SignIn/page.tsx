@@ -33,16 +33,22 @@ const Signin = () => {
     return;
   }
    let data: any;
-   try { await response.json();
-    console.log(data);
+   try { 
+    if (response.headers.get('Content-Type').includes('application/json')) {
+    data = await response.json();
+    } else {
+      data = await response.text();
+    }
+    console.log('Data', data);
    } catch (error) {
     console.error('Error parsing JSON', error);
    }
     if(response.ok) {
-      setUserName(data.firstName);
+      setUserName('User');
+      if (userName) {
       router.push({
         pathname: '/SignedUserPage',
-        query: { name: String(firstName) }
+        query: { name: String(userName) }
       });
     } else {
       const errorMessageElement = document.getElementById('login-error');
@@ -51,7 +57,7 @@ const Signin = () => {
       }
     }
   };
-
+  }
   return (
     <div className='flex flex-col items-center justify-center min-h-screen'>
     <form className='flex flex-col items-center gap-3 rounded-2xl w-1/4 bg-white py-7 shadow-xl'
