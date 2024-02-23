@@ -1,6 +1,6 @@
     import React from 'react';
     import Link from 'next/link';
-    import SearchForm from '../SearchForm';
+    import SearchForm from '../../../pages/SearchForm';
 
 
     const Nav = () => {

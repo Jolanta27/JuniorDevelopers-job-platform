@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { locations, positions, technologies } from '../utils';
+import { locations, positions, technologies } from '../app/utils';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
-import JobsPage from '../../pages/jobs';
+import JobsPage from './jobs';
 
 export type FormState = {
   location: string;
